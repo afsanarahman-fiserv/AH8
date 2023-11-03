@@ -10,13 +10,19 @@ class Node<T> {
   
   class Source {
     public static <T> boolean linkedListFind(Node<T> head, T target) {
-      while(head != null) {
-          if(head.val.equals(target)) {
-              return true;
-          }
-          head = head.next;
-      }
-      return false;
+        // iterate through each node of the list
+        while(head != null) {
+            // use .equals() -- compatible with any object T
+            // "==" would be comparing references -- we want to compare values
+            if(head.val.equals(target)) {
+                return true;
+            }
+            // if condition isn't true (node not found), move to next node
+            head = head.next;
+        }
+
+        // iterated through the whole list -- target not found
+        return false;
     }
     
     public static void main(String[] args) {

@@ -1,11 +1,16 @@
 class ECSource {
   public static <T> T getNodeValue(Node<T> head, int index) {
+    // iterate through the list to get to the index
     for (int i = 0; i < index; i++) {
+      // if we reach end of list before reaching index, return null
       if(head == null) {
         return null;
       }
+      // otherwise, list is not empty -- move to next node
       head = head.next;
     }
+
+    // loop iterated in entirety -- index has been reached
     return head.val;
   }
   
